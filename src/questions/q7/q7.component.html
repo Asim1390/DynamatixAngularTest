@@ -1,0 +1,74 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h4 class="fw-bold">Q7 Using the toilet and managing incontinence</h4>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>Using the toilet means:</p>
+        <ul>
+            <li>Being able to get on or off a normal toilet</li>
+            <li>Cleaning yourself after using the toilet</li>
+        </ul>
+        <p>Managing incontinence means:</p>
+        <ul>
+            <li>Managing the emptying of your bowel and bladder when you have
+                difficulty controlling this, including if you need a collecting
+                device such as a catheter or stoma bag</li>
+            <li>Cleaning yourself after doing so</li>
+        </ul>
+        <p>This does not mean physically getting to the bathroom.</p>
+
+        <!-- Question 7a -->
+        <h5 class="fw-bold">Q7a Does your condition affect you using the toilet
+            or managing incontinence?</h5>
+        <p>(Put a cross in one box below)</p>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q7a" id="q7a_no"
+                [(ngModel)]="formData.toiletCondition" value="No">
+            <label class="form-check-label fw-bold" for="q7a_no">No
+                <span class="text-primary">Now go to Q8</span>
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q7a" id="q7a_yes"
+                [(ngModel)]="formData.toiletCondition" value="Yes">
+            <label class="form-check-label fw-bold" for="q7a_yes">Yes
+                <span class="text-primary">Continue with Q7</span>
+            </label>
+        </div>
+
+        <!-- Question 7b -->
+        <h5 class="fw-bold mt-4">Q7b Tell us about the difficulties you have
+            using the toilet and how you manage them.</h5>
+        <p>For each difficulty, please tell us:</p>
+        <ul>
+            <li>How often you have this difficulty – tell us about both good and
+                bad days</li>
+            <li>What the difficulty is</li>
+            <li>Why you have it, or how it relates to your condition</li>
+            <li>Any aids or adaptations you use, or help you get from another
+                person</li>
+            <li>Any help you feel you need but do not get</li>
+        </ul>
+
+        <h5 class="fw-bold">Examples</h5>
+        <p>‘I always have difficulty cleaning myself after a bowel movement
+            because I cannot safely reach behind myself while using the toilet.
+            My care worker assists me in cleaning myself following a bowel
+            movement.’</p>
+        <p>‘I suffer from bladder incontinence and buy my own pads to avoid
+            embarrassment.’</p>
+
+        <!-- Difficulty Description -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.toiletDifficulties"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.toiletDifficulties = $event"></app-voice-recorder>
+        </div>
+    </div>
+</div>

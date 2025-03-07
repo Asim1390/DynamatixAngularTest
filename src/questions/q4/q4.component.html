@@ -1,0 +1,84 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h4>Q4 Eating and Drinking</h4>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means:</p>
+        <ul>
+            <li>Remembering when to eat</li>
+            <li>Cutting food into pieces</li>
+            <li>Putting food and drink in your mouth</li>
+            <li>Chewing and swallowing food and drink</li>
+        </ul>
+        <p>Do consider if you need help cutting up food, getting it to your
+            mouth, or if someone needs to prompt, encourage, or remind you
+            to eat.</p>
+
+        <!-- Question 4a -->
+        <h6>Q4a Does your condition affect you eating and drinking?</h6>
+        <p>(Put a cross in one box below)</p>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q4a" id="eatingNo"
+                [(ngModel)]="formData.eatingCondition" value="No">
+            <label class="form-check-label" for="eatingNo">No <strong>Now go to Q5</strong></label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q4a" id="eatingYes"
+                [(ngModel)]="formData.eatingCondition" value="Yes">
+            <label class="form-check-label" for="eatingYes">Yes <strong>Continue with Q4</strong></label>
+        </div>
+        
+
+        <!-- Question 4b -->
+        <h6 class="mt-3">Q4b Do you use a feeding tube or similar device to eat
+            or drink?</h6>
+        <p>(Put a cross in one box below)</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedingTube"
+                id="feedingNo"
+                [(ngModel)]="formData.feedingTube"
+                (change)="setFeedingTube('No')">
+            <label class="form-check-label" for="feedingNo">No</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="feedingTube"
+                id="feedingYes"
+                [(ngModel)]="formData.feedingTube"
+                (change)="setFeedingTube('Yes')">
+            <label class="form-check-label" for="feedingYes">Yes</label>
+        </div>
+
+        <!-- Question 4c -->
+        <h6 class="mt-3">Q4c Tell us about the difficulties you have with eating
+            and drinking and how you manage them.</h6>
+        <p>For each difficulty, please tell us:</p>
+        <ul>
+            <li>How often you have this difficulty – tell us about both good
+                and bad days</li>
+            <li>What the difficulty is</li>
+            <li>Why you have it, or how it relates to your condition</li>
+            <li>Any aids or adaptations you use, or help you get from
+                another person</li>
+            <li>Any help you feel you need but do not get</li>
+        </ul>
+
+        <h6>Examples</h6>
+        <p
+            class="fst-italic">"At least 5 times a week, I have difficulty cutting up my food at dinner because my right hand hurts when I hold a knife. I need adapted cutlery so I can cut up my food myself."</p>
+        <p
+            class="fst-italic">"I always have difficulty eating enough food at mealtimes to keep healthy because I am preoccupied with my weight and get very upset. My partner prompts me to manage my portion size and eat my meals."</p>
+
+        <!-- Difficulty Description -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.difficulties"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.difficulties = $event"></app-voice-recorder>
+        </div>
+    </div>
+</div>

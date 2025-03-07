@@ -1,0 +1,76 @@
+<div class="container mt-4">
+    <h4 class="fw-bold">Section 4 – What happens next</h4>
+    <p>Please send this form to us in the envelope provided. On the back of the
+        form, you will see the address to return it to. Place the form in the
+        envelope provided so that the address shows through the window. It does
+        not need a stamp.</p>
+    <p>Remember to include your supporting evidence.</p>
+    <p>You do not need to contact us. We may call you if we have any questions
+        about this form. The number may show as withheld, unrecognised or may
+        start <strong>0800</strong>.</p>
+
+    <div class="mb-3">
+        <label class="fw-bold">Please confirm your preferred contact
+            number</label>
+        <input type="text" class="form-control"
+            [(ngModel)]="formData.contactNumber">
+    </div>
+    <div class="mb-3">
+        <label class="fw-bold">Tell us any times of the day we cannot
+            call</label>
+        <input type="text" class="form-control"
+            [(ngModel)]="formData.noCallTimes">
+    </div>
+
+    <p>When we receive your form, we may invite you to attend an assessment with
+        a health professional. This will give you the chance to tell us more
+        about how your health condition or disability affects your daily
+        life.</p>
+
+    <p class="fw-bold">If we invite you to an assessment, you must attend. If
+        you do not attend and you do not have a good reason, your PIP claim will
+        end. If you currently get Disability Living Allowance (DLA) this will
+        stop.</p>
+    <p>However, if you have given us enough information, an assessment may not
+        be needed.</p>
+
+    <h5 class="fw-bold">Attending an assessment with a health professional</h5>
+    <p>If you are invited to an assessment appointment with a health
+        professional:</p>
+    <ul>
+        <li>you may be able to have someone with you</li>
+        <li>tell us if you need an interpreter, for example, British Sign
+            Language</li>
+        <li>you will need to have 2 forms of identity with you, like your
+            passport or UK utility bill</li>
+        <li>the health professional will talk to you about how your health
+            condition or disability affects your daily life; it is not a
+            physical examination</li>
+        <li>the assessment will take about an hour</li>
+    </ul>
+
+    <p>Tell us on this form about any help you (or someone who may accompany
+        you) would need if you have to go for a face-to-face assessment. This
+        will help us meet your needs. For example, tell us if you or they:</p>
+    <ul>
+        <li>cannot get up and down stairs</li>
+        <li>have difficulty travelling or using public transport</li>
+        <li>have communication needs, and what support you or they will
+            need</li>
+        <li>need accessible toilets</li>
+    </ul>
+    <p>Please be specific about the needs you or they have.</p>
+
+    <label for="additionalInfo2" class="form-label fw-bold">Your
+        Response:</label>
+    <textarea id="additionalInfo2" class="form-control" rows="5"
+        [(ngModel)]="formData.additionalInfo2"
+        placeholder="Enter your additional information here..."></textarea>
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.additionalInfo2 = $event"></app-voice-recorder>
+        </div>
+    <div class="text-center mt-3">
+        <button type="button" class="btn btn-primary btn-lg"
+            (click)="logData()">Submit</button>
+    </div>
+</div>

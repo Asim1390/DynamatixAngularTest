@@ -1,0 +1,68 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h3>Q11 Mixing with other people</h3>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means:</p>
+        <ul>
+            <li>Meeting people face-to-face</li>
+            <li>Understanding how they are behaving towards you including body
+                language</li>
+            <li>Behaving appropriately towards them</li>
+            <li>Being able to make new relationships with other people</li>
+        </ul>
+        <p>This means doing these things with both people you know well and
+            people you do not know.</p>
+
+        <h5>Q11a Does your condition affect you mixing with other people?</h5>
+        <p>(Put a cross in one box below)</p>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="mixingCondition"
+                id="q11aNo" value="No"
+                (change)="setMixingCondition('No')">
+            <label class="form-check-label" for="q11aNo">No <strong>Now go to
+                    Q12</strong></label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="mixingCondition"
+                id="q11aYes" value="Yes"
+                (change)="setMixingCondition('Yes')">
+            <label class="form-check-label" for="q11aYes">Yes <strong>Continue
+                    with Q11</strong></label>
+        </div>
+
+        <div>
+            <h5 class="mt-4">Q11b Tell us about the difficulties you have with
+                mixing with other people and how you manage
+                them.</h5>
+            <p>For each difficulty, please tell us:</p>
+            <ul>
+                <li>How often you have this difficulty – tell us about both good
+                    and bad days</li>
+                <li>What the difficulty is</li>
+                <li>Why you have it, or how it relates to your condition</li>
+                <li>Any help you get from another person</li>
+                <li>Any help you feel you need but do not get</li>
+                <li>Whether severe anxiety or distress stops you from doing
+                    this</li>
+                <li>About any risk of harm to you and others</li>
+            </ul>
+
+            <h6>Example</h6>
+            <p>‘I am always unable to meet new people by myself because I become
+                very distressed. My carer supports me when
+                I interact with new people so I do not become distressed.’</p>
+
+            <textarea class="form-control mt-3" rows="5"
+                placeholder="Describe your difficulties..."
+                [(ngModel)]="formData.mixingCondition"></textarea>
+                <div class="text-center mt-3">
+                    <app-voice-recorder (textCaptured)="formData.mixingCondition = $event"></app-voice-recorder>
+                </div>
+        </div>
+
+    </div>
+</div>
+

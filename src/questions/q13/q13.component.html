@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h2 class="fw-bold">Q13 Planning and following a journey</h2>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means doing the following:</p>
+        <ul>
+            <li>Leaving your home to go out</li>
+            <li>Following a route you know well</li>
+            <li>Working out a new route and following it, for example, if
+                you find a road is closed on a route you know well and need
+                to plan and follow a different route</li>
+        </ul>
+        <p>This question is not about if you can physically move around.</p>
+
+        <!-- Question 13a -->
+        <h5 class="fw-bold">Q13a Does your condition affect you planning and
+            following journeys?</h5>
+        <p>(Put a cross in one box below)</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q13a" id="q13aNo"
+                [(ngModel)]="formData.planningJourney" value="No">
+            <label class="form-check-label fw-bold" for="q13aNo">No - Now go to Q14</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q13a"
+                id="q13aYes" [(ngModel)]="formData.planningJourney" value="Yes">
+            <label class="form-check-label fw-bold" for="q13aYes">Yes - Continue with Q13</label>
+        </div>
+
+        <!-- Question 13b -->
+        <div>
+            <h5 class="fw-bold mt-4">Q13b Tell us more about the difficulties
+                you have with planning and following journeys and how you manage them.</h5>
+            <textarea class="form-control mt-3" rows="5"
+                [(ngModel)]="formData.planningDifficulties"
+                placeholder="Describe your difficulties..."></textarea>
+                <div class="text-center mt-3">
+                    <app-voice-recorder (textCaptured)="formData.planningDifficulties = $event"></app-voice-recorder>
+                </div>
+        </div>
+    </div>
+</div>

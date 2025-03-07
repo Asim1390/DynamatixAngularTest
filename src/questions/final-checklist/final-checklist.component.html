@@ -1,0 +1,65 @@
+
+<div class="container mt-4">
+    <h2><strong>How DWP collects and uses information</strong></h2>
+    <p>When we collect information about you, we may use it for any of our
+        purposes. These include:</p>
+    <ul>
+        <li>Social security benefits and allowances</li>
+        <li>Child maintenance</li>
+        <li>Employment and training</li>
+        <li>Investigating and prosecuting tax credits offences</li>
+        <li>Private pensions policy and</li>
+        <li>Retirement planning</li>
+    </ul>
+    <p>We may get information about you from other parties for any of our
+        purposes as the law allows to check the information you provide and
+        improve our services. We may give information about you to other
+        organisations as the law allows, for example, to protect against
+        crime.</p>
+    <p>To find out more about our purposes, how we use personal information for
+        those purposes and your information rights, including how to request a
+        copy of your information, please visit:
+        <a href="https://www.gov.uk/dwp/personal-information-charter"
+            target="_blank">
+            <strong>www.gov.uk/dwp/personal-information-charter</strong>
+        </a>
+    </p>
+
+    <h3><strong>Final checklist</strong></h3>
+    <p><strong>Please check you have answered all the questions on this form and
+            tick the box.</strong></p>
+
+    <div class="mb-3">
+        <div *ngFor="let step of checklist; let i = index">
+            <label>
+                <input type="checkbox" [(ngModel)]="step.checked">
+                <strong>{{ step.label }}</strong>
+            </label>
+        </div>
+    </div>
+
+    <h4><strong>Please return the completed form to this address.</strong></h4>
+    <p>
+        Freepost RTEU-HBEC-RGTG<br>
+        Personal Independence Payment 1<br>
+        Mail Handling Site A<br>
+        Wolverhampton<br>
+        WV98 1AA
+    </p>
+    <p>Put the completed form in the envelope provided, making sure the address
+        shows through the envelope window. The envelope does not need a stamp
+        unless you live outside the United Kingdom.</p>
+    <p>If you have access to the internet, you can get information about
+        Personal Independence Payment by going to the Personal Independence
+        Payment website:
+        <a href="https://www.gov.uk/pip" target="_blank">
+            <strong>www.gov.uk/pip</strong>
+        </a>
+    </p>
+
+    <div class="text-center mt-3">
+        <button type="button" class="btn btn-primary btn-lg"
+            (click)="logChecklist()">Submit</button>
+    </div>
+</div>
+

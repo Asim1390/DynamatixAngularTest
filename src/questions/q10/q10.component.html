@@ -1,0 +1,69 @@
+
+<div class="container mt-4">
+    <div class="card p-4">
+        <h4 class="fw-bold">Q10 Reading</h4>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means doing the following in your own language:</p>
+        <ul>
+            <li>Reading written words and numbers both indoors and outdoors</li>
+            <li>Reading signs and symbols (for example, a green exit sign on a
+                door)</li>
+        </ul>
+        <p>For this question, you must be able to see the information. Using
+            braille to read is not counted as reading, and you should give more
+            detail about how your condition affects your ability to read.</p>
+
+        <!-- Question 10a -->
+        <h6 class="fw-bold">Q10a Does your condition affect your ability to
+            read? (Put a cross in one box below)</h6>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q10a"
+                    id="noEffect" [(ngModel)]="formData.readingCondition" value="No">
+                <label class="form-check-label fw-bold" for="noEffect">No <span
+                        class="fw-normal">Now go to Q11</span></label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="q10a"
+                    id="yesEffect" [(ngModel)]="formData.readingCondition" value="Yes">
+                <label class="form-check-label fw-bold" for="yesEffect">Yes <span
+                        class="fw-normal">Continue with Q10</span></label>
+            </div>
+            
+
+        <!-- Question 10b -->
+        <h6 class="fw-bold mt-3">Q10b Tell us about the difficulties you have
+            with reading words or symbols and how you manage them.</h6>
+        <p>For each difficulty, please tell us:</p>
+        <ul>
+            <li>How often you have this difficulty – tell us about both good and
+                bad days</li>
+            <li>What the difficulty is</li>
+            <li>Why you have it, or how it relates to your condition</li>
+            <li>Any aids or adaptations you use, or help you get from another
+                person</li>
+            <li>Any help you feel you need but do not get</li>
+        </ul>
+
+        <h6 class="fw-bold">Examples</h6>
+        <p>‘I am never able to read one sentence after another because I confuse
+            the order of the letters and words. I use a portable scanner to help
+            me understand written words more quickly.’</p>
+        <p>‘I have dyslexia and need to use a yellow filter to help me to
+            read.’</p>
+        <p>‘Most days, I am unable to read at all because I experience double
+            vision and am unable to focus. My partner reads for me when I am
+            unable to do it myself.’</p>
+
+        <!-- Difficulty Description -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.readingDifficulties"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.readingDifficulties = $event"></app-voice-recorder>
+        </div>
+    </div>
+</div>

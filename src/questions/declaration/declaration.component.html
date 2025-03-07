@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+    <h1 class="fw-bold">Declaration</h1>
+    <p>The information I have given on this form is correct and complete.</p>
+    <p>I have provided the best information available to me at this time to
+        support my claim.</p>
+    <p>I will tell the Department for Work and Pensions straight away, by phone
+        or in writing, of any changes that may affect my claim.</p>
+    <p>If my ability to carry out day-to-day activities or get around improves
+        or gets worse, the amount of Personal Independence Payment (PIP) I get
+        might change.</p>
+    <p>If the information I give you is wrong or incomplete, or I do not report
+        changes straight away:</p>
+    <ul>
+        <li>my PIP payments might stop or reduce</li>
+        <li>I might be paid too much PIP and have to pay this back</li>
+        <li>I might have to pay a financial penalty</li>
+        <li>I might be prosecuted</li>
+    </ul>
+
+    <h5 class="fw-bold">Signature</h5>
+    <input type="file" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+    <img *ngIf="signatureUrl" [src]="signatureUrl" alt="Signature Preview" class="mt-2" style="max-width: 200px;">
+    
+
+    <h5 class="fw-bold">Print your name here</h5>
+    <input type="text" class="form-control" placeholder="Enter your name"
+        [(ngModel)]="formData.yourName" name="name">
+
+    <h5 class="fw-bold">Date</h5>
+    <input type="date" class="form-control" [(ngModel)]="formData.date"
+        name="date">
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.yourName = $event"></app-voice-recorder>
+        </div>
+</div>

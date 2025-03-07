@@ -1,0 +1,162 @@
+<div class="container mt-5">
+    <h2 class="fw-bold">Filling in the Form</h2>
+    <ol start="6">
+        <li><strong>Photocopy your supporting evidence and write your
+                full name and reference number on the top of each
+                page.</strong> You can find your reference number at the
+            top of the letter that came with this form (the reference
+            number is usually the same as your National Insurance
+            number).</li>
+        <li><strong>Return this form to us with photocopies of your
+                supporting evidence by the date on your
+                letter.</strong></li>
+    </ol>
+    <p>You may want to make a copy of the completed form and your
+        supporting evidence before you send it back.</p>
+    <p><strong>Do not delay</strong> sending your form if you are
+        waiting for more supporting evidence. You can send it later to
+        the address on the letter. If you do this, write your name and
+        reference number on each piece of supporting evidence. You can
+        find your reference number at the top of the letter that came
+        with the form (the reference number is usually the same as your
+        National Insurance number).</p>
+
+    <h3 class="fw-bold">If you are filling in all or some of this form
+        for someone else</h3>
+    <p>Tell us who you are in the table below:</p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Relationship with Claimant</th>
+            </tr>
+        </thead>
+        <tbody id="conditionsTable">
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="name" [(ngModel)]="formData.name" 
+                            (focus)="startRecording('name')">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="relationship" [(ngModel)]="formData.relationship" 
+                            (focus)="startRecording('relationship')">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!-- Add Voice Recorder Component (Only Starts When Needed) -->
+    <app-voice-recorder *ngIf="activeField" (textCaptured)="updateField($event)"></app-voice-recorder>
+    
+    
+
+
+ 
+
+    <p>We use this information to understand what help the claimant
+        needs or has needed to fill in this form.</p>
+    <p><strong>If you are filling in some or all of the form because the
+            person claiming PIP is not capable of answering for
+            themselves, you can tell us about their needs and the help
+            you give them from your point of view.</strong></p>
+
+    <h4 class="fw-bold">Examples</h4>
+    <p>‘Alex always has difficulty cooking safely by himself as he
+        forgets if the hob is on.’</p>
+    <p>‘As his carer, I help Alex by supervising him while he cooks and
+        prompting him if he forgets something.’</p>
+    <p>This can be as well as or instead of the claimant giving the
+        information themselves.</p>
+
+    <p><strong>If the person claiming PIP is capable of answering for
+            themselves, but needs someone to physically put the answers
+            onto the form.</strong></p>
+    <p>If the person claiming PIP needs help to physically put their
+        answers onto the form, for example due to a visual or physical
+        impairment, they can answer from their own point of view.</p>
+</div>
+
+<div class="container mt-5">
+    <form>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="powerOfAttorney"
+                [(ngModel)]="formData.powerOfAttorney" name="powerOfAttorney">
+            <label class="form-check-label" for="powerOfAttorney">I have Power
+                of Attorney for them</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="deputyReceiver"
+                [(ngModel)]="formData.deputyReceiver" name="deputyReceiver">
+            <label class="form-check-label" for="deputyReceiver">I am a Deputy
+                or Receiver for them under a Court of Protection Order</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tutorGuardian"
+                [(ngModel)]="formData.tutorGuardian" name="tutorGuardian">
+            <label class="form-check-label" for="tutorGuardian">I am a Tutor,
+                Guardian, Curator bonis or Judicial factor for them (under
+                Scottish law)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                id="corporateAppointee"
+                [(ngModel)]="formData.corporateAppointee"
+                name="corporateAppointee">
+            <label class="form-check-label" for="corporateAppointee">I am a
+                Corporate Acting Body or Corporate Appointee</label>
+            <p>An organisation appointed to act on their behalf, such as a local
+                authority or firm of solicitors</p>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                id="processOfBecoming" [(ngModel)]="formData.processOfBecoming"
+                name="processOfBecoming">
+            <label class="form-check-label" for="processOfBecoming">I am in the
+                process of becoming one of the above listed in the first 4
+                options</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="dwpAppointed"
+                [(ngModel)]="formData.dwpAppointed" name="dwpAppointed">
+            <label class="form-check-label" for="dwpAppointed">DWP has already
+                appointed me to receive their benefits and deal with letters
+                about their benefits</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox"
+                id="wantDwpAppointed" [(ngModel)]="formData.wantDwpAppointed"
+                name="wantDwpAppointed">
+            <label class="form-check-label" for="wantDwpAppointed">I want DWP to
+                appoint me to receive their benefits and deal with letters about
+                their benefits because they are too ill or disabled to claim
+                benefits for themselves</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="noneApply"
+                [(ngModel)]="formData.noneApply" name="noneApply">
+            <label class="form-check-label" for="noneApply">None of the above
+                apply, but the person claiming cannot physically sign for
+                themselves because of their disability, illness or health
+                condition</label>
+        </div>
+    </form>
+
+    <p>If the person claiming does not know you are signing for them, please
+        tell us why:</p>
+        <textarea class="form-control mt-3" rows="5"
+        placeholder="Describe your difficulties..."
+        [(ngModel)]="formData.reason" name="reason"
+        (focus)="startRecording('reason')"></textarea>
+    
+    <!-- Show Voice Recorder only when activeField is 'reason' -->
+    <div class="text-center mt-3" *ngIf="activeField === 'reason'">
+        <app-voice-recorder (textCaptured)="updateField($event)"></app-voice-recorder>
+    </div>
+    
+    
+</div>

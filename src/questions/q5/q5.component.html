@@ -1,0 +1,101 @@
+
+
+<div class="container mt-4">
+    <div class="card p-4">
+        <h5 class="fw-bold">Q5 Managing your treatments</h5>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means:</p>
+        <ul>
+            <li>Monitoring changes in your health condition or disability (for
+                example, your blood sugar level, mental state, or pain
+                levels)</li>
+            <li>Taking medication in the right way and at the right time</li>
+            <li>Managing therapies that take place at home which have been
+                recommended by a health professional or pharmacist (for example,
+                physiotherapy or home dialysis)</li>
+        </ul>
+
+        <!-- Question 5a -->
+        <p class="fw-bold">Q5a Does your condition affect you managing your treatments?</p>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q5a" id="q5aNo"
+                [(ngModel)]="formData.managingCondition" value="No">
+            <label class="form-check-label fw-bold" for="q5aNo">No 
+                <span class="text-primary">Now go to Q6</span>
+            </label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q5a" id="q5aYes"
+                [(ngModel)]="formData.managingCondition" value="Yes">
+            <label class="form-check-label fw-bold" for="q5aYes">Yes 
+                <span class="text-primary">Continue with Q5</span>
+            </label>
+        </div>
+        
+
+        <!-- Question 5b -->
+        <p class="fw-bold mt-3">Q5b Tell us about the difficulties you have with
+            monitoring changes in your health condition or disability and taking
+            medication, and how you manage them.</p>
+        <p>For each difficulty, please tell us:</p>
+        <ul>
+            <li>How often you have this difficulty – tell us about both good and
+                bad days</li>
+            <li>What the difficulty is</li>
+            <li>Why you have it, or how it relates to your condition</li>
+            <li>Any aids or adaptations you use, or help you get from another
+                person</li>
+            <li>Any help you feel you need but do not get</li>
+        </ul>
+
+        <p class="fw-bold">Examples</p>
+        <div class="border p-3 bg-light">
+            <p>‘About 4 days a week, I have trouble taking my arthritis
+                medication because my wrists hurt when I try to open the pill
+                bottle. I put my pills in a dosette box so I do not need to open
+                the pill bottle on days when I am unable.’</p>
+            <p>‘Every evening, I have trouble monitoring my blood glucose levels
+                because I forget and get confused on how to do it. My partner
+                prompts me and helps me measure my blood glucose levels in the
+                evening.’</p>
+        </div>
+
+        <!-- Difficulty Description -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.difficultie"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <button type="button" class="btn btn-danger btn-lg">🎤
+                Record</button>
+        </div>
+
+        <!-- Question 5c -->
+        <h6 class="fw-bold mt-4">Q5c Tell us about any therapies you take at
+            home that need the help of another person.</h6>
+        <p>We want to know about:</p>
+        <ul>
+            <li>What the therapy is.</li>
+            <li>How often you receive the therapy.</li>
+            <li>How long the therapy takes.</li>
+            <li>The type of assistance you need from another person and for how
+                long.</li>
+            <li>Any help you feel you need but do not get.</li>
+        </ul>
+
+        <!-- Therapy Details -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.therapyDetails"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.therapyDetails = $event"></app-voice-recorder>
+        </div>
+    </div>
+</div>

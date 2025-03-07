@@ -1,0 +1,66 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h4 class="fw-bold">Q14 Moving around</h4>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means how well you can walk without any specialist equipment
+            or support from another person.</p>
+
+        <!-- Question 14a -->
+        <h6 class="fw-bold">Q14a Does your condition affect you moving around? (Put a cross in one box below)</h6>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="movingAround"
+                id="q14aNo" [(ngModel)]="formData.movingAround" value="No">
+            <label class="form-check-label fw-bold" for="q14aNo">No <span class="text-primary">Now go to Q15</span></label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="movingAround"
+                id="q14aYes" [(ngModel)]="formData.movingAround" value="Yes">
+            <label class="form-check-label fw-bold" for="q14aYes">Yes <span class="text-primary">Continue with Q14</span></label>
+        </div>
+
+        <!-- Question 14b -->
+        <div>
+            <h6 class="fw-bold mt-3">Q14b How far can you walk using any aids or
+                appliances you need? (Put a cross in one box below)</h6>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio"
+                    name="walkingDistance" id="cannotMove"
+                    [(ngModel)]="formData.walkingDistance" value="cannotMove">
+                <label class="form-check-label" for="cannotMove">I cannot stand
+                    and move even using my aids or appliances</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio"
+                    name="walkingDistance" id="lessThan20"
+                    [(ngModel)]="formData.walkingDistance" value="lessThan20">
+                <label class="form-check-label" for="lessThan20">Less than 20
+                    metres</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio"
+                    name="walkingDistance" id="between20And50"
+                    [(ngModel)]="formData.walkingDistance"
+                    value="between20And50">
+                <label class="form-check-label" for="between20And50">Between 20
+                    and up to 50 metres</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio"
+                    name="walkingDistance" id="varies"
+                    [(ngModel)]="formData.walkingDistance" value="varies">
+                <label class="form-check-label" for="varies">It varies – please
+                    tell us why</label>
+            </div>
+
+            <textarea class="form-control mt-3" rows="5"
+                [(ngModel)]="formData.movingDifficulties"
+                placeholder="Describe your difficulties..."></textarea>
+                <div class="text-center mt-3">
+                    <app-voice-recorder (textCaptured)="formData.movingDifficulties = $event"></app-voice-recorder>
+                </div>
+        </div>
+    </div>
+</div>

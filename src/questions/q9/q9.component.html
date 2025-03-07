@@ -1,0 +1,62 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h2>Q9 Talking, Listening and Understanding</h2>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means doing the following in your own language:</p>
+        <ul>
+            <li>Communicating by speaking clearly to people</li>
+            <li>Being understood by others</li>
+            <li>Listening and understanding what people say</li>
+        </ul>
+
+        <!-- Question 9a -->
+        <h5>Q9a Does your condition affect you talking, listening and
+            understanding?</h5>
+        <p>(Put a cross in one box below)</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q9a" id="q9aNo"
+                [(ngModel)]="formData.talkingCondition" value="No">
+            <label class="form-check-label fw-bold" for="q9aNo">No - Now go to Q10</label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q9a" id="q9aYes"
+                [(ngModel)]="formData.talkingCondition" value="Yes">
+            <label class="form-check-label fw-bold" for="q9aYes">Yes - Continue with Q9</label>
+        </div>
+        
+        <!-- Question 9b -->
+        <h5 class="mt-3">Q9b Tell us about the difficulties you have with
+            talking, listening and understanding and how you manage them.</h5>
+        <p>For each difficulty, please tell us:</p>
+        <ul>
+            <li>How often you have this difficulty – tell us about both good and
+                bad days</li>
+            <li>What the difficulty is</li>
+            <li>Why you have it, or how it relates to your condition</li>
+            <li>Any aids or adaptations you use, or help you get from another
+                person</li>
+            <li>Any help you feel you need but do not get</li>
+        </ul>
+
+        <h5>Examples</h5>
+        <p>‘I always have difficulties listening because I am hard of hearing. I
+            use 2 hearing aids to help me hear what other people are
+            saying.’</p>
+        <p>‘I have difficulty speaking and expressing myself due to having a
+            stroke several years ago. I use a communication board to help me
+            communicate with others.’</p>
+
+        <!-- Difficulty Description -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.talkingDifficulties"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.talkingDifficulties = $event"></app-voice-recorder>
+        </div>
+    </div>
+</div>

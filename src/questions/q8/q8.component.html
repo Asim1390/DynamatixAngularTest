@@ -1,0 +1,69 @@
+<div class="container mt-4">
+    <div class="card p-4">
+        <h4 class="fw-bold">Q8 Dressing and undressing</h4>
+        <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/sample-video" frameborder="0"
+        allowfullscreen></iframe>
+        <p>This means:</p>
+        <ul>
+            <li>Putting on and taking off clothing, including shoes and
+                socks</li>
+            <li>Needing help to fasten or undo zips or buttons</li>
+            <li>Knowing when to put on or take off clothes</li>
+        </ul>
+        <p>Do consider if it takes you too long to dress or undress.</p>
+
+        <!-- Question 8a -->
+        <h5 class="fw-bold">Q8a Does your condition affect you dressing or undressing? 
+            <small>(Put a cross in one box below)</small>
+        </h5>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q8a" id="q8aNo"
+                [(ngModel)]="formData.dressingCondition" value="No">
+            <label class="form-check-label fw-bold" for="q8aNo">No 
+                <span class="fw-normal">Now go to Q9</span>
+            </label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="q8a" id="q8aYes"
+                [(ngModel)]="formData.dressingCondition" value="Yes">
+            <label class="form-check-label fw-bold" for="q8aYes">Yes 
+                <span class="fw-normal">Continue with Q8</span>
+            </label>
+        </div>
+        
+
+        <!-- Question 8b -->
+        <h5 class="fw-bold mt-4">Q8b Tell us about the difficulties you have
+            with dressing and undressing and how you manage them.</h5>
+        <p>For each difficulty, please tell us:</p>
+        <ul>
+            <li>How often you have this difficulty – tell us about both good and
+                bad days</li>
+            <li>What the difficulty is</li>
+            <li>Why you have it, or how it relates to your condition</li>
+            <li>Any aids or adaptations you use, or help you get from another
+                person</li>
+            <li>Any help you feel you need but do not get</li>
+        </ul>
+
+        <h5 class="fw-bold mt-4">Examples</h5>
+        <p>‘About 3 times a week, I have trouble dressing my upper body because
+            my hands shake too much to do up the buttons on my shirt. I use a
+            button hook to do the buttons on my shirt.’</p>
+        <p>‘Most days my partner has to remind me to get dressed during the
+            day.’</p>
+
+        <!-- Difficulty Description -->
+        <textarea class="form-control mt-3" rows="5"
+            [(ngModel)]="formData.dressingDifficulties"
+            placeholder="Describe your difficulties..."></textarea>
+
+        <!-- Big Mic Button for Recording -->
+        <div class="text-center mt-3">
+            <app-voice-recorder (textCaptured)="formData.dressingDifficulties = $event"></app-voice-recorder>
+        </div>
+    </div>
+</div>
