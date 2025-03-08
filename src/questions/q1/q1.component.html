@@ -1,118 +1,138 @@
 
 <div class="container mt-4">
-    <div class="card p-4">
-        <!-- Section Heading -->
-        <h3>Section 1 – About your health condition or disability</h3>
+  <div class="card p-4">
+    <!-- Section Heading -->
+    <h3>Section 1 – About your health condition or disability</h3>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/IkIv1KfRk4g"
+      frameborder="0" allowfullscreen>
+    </iframe>
 
-        <!-- Question 1a -->
-        <h5>Q1a Tell us in the space below:</h5>
-        <ul>
-            <li><strong>What health condition or disability do you
-                    have?</strong></li>
-            <li><strong>The approximate start date</strong></li>
-        </ul>
+    <!-- Question 1a -->
+    <h5>Q1a Tell us in the space below:</h5>
+    <ul>
+      <li><strong>What health condition or disability do you
+          have?</strong></li>
+      <li><strong>The approximate start date</strong></li>
+    </ul>
 
-        <!-- Table for Health Conditions -->
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name of your condition or disability</th>
-                <th>Approximate start date</th>
-               
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let condition of formData.conditions; let i = index">
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="condition.condition">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'conditions', i, 'condition')"></app-voice-recorder>
-                </td>
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="condition.startDate">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'conditions', i, 'startDate')"></app-voice-recorder>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
-        <button type="button" class="btn btn-primary" (click)="addCondition()">+
-            Add Another Condition</button>
-       
-        <!-- Question 1b -->
-        <h5 class="mt-4">Q1b Tell us about tablets or other medication you are
-            taking or will be taking and the dosage.</h5>
-        <p>If you have side effects from taking your medication, please tell us
-            what they are.</p>
+    <!-- Table for Health Conditions -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name of your condition or disability</th>
+          <th>Approximate start date</th>
 
-        <!-- Table for Medications -->
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Medication</th>
-                <th>Dosage</th>
-                <th>How often do you take it?</th>
-                <th>Do you have any side effects?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let medicine of formData.medications; let i = index">
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="medicine.medicine">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'medications', i, 'medicine')"></app-voice-recorder>
-                </td>
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="medicine.dose">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'medications', i, 'dose')"></app-voice-recorder>
-                </td>
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="medicine.frequency">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'medications', i, 'frequency')"></app-voice-recorder>
-                </td>
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="medicine.sideEffects">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'medications', i, 'sideEffects')"></app-voice-recorder>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
-        <button type="button" class="btn btn-primary"
-            (click)="addMedication()">+ Add Another Medication</button>
-      
-        <!-- Question 1c -->
-        <h5 class="mt-4">Q1c Tell us about any treatments you have had, you are
-            currently having or have planned for the future.</h5>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let condition of formData.conditions; let i = index">
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="condition.condition">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'conditions', i, 'condition')"></app-voice-recorder>
+          </td>
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="condition.startDate">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'conditions', i, 'startDate')"></app-voice-recorder>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-        <!-- Table for Treatments -->
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Name of treatment, therapy, or operation</th>
-                <th>When did it start/When will it happen?</th>
-                <th>How often do you have it?</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let treatment of formData.treatments; let i = index">
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="treatment.therapy">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'treatments', i, 'therapy')"></app-voice-recorder>
-                </td>
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="treatment.startDate">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'treatments', i, 'startDate')"></app-voice-recorder>
-                </td>
-                <td>
-                  <input type="text" class="form-control" [(ngModel)]="treatment.frequency">
-                  <app-voice-recorder (textCaptured)="updateField($event, 'treatments', i, 'frequency')"></app-voice-recorder>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
+    <button type="button" class="btn btn-primary" (click)="addCondition()">+
+      Add Another Condition</button>
 
-        <button type="button" class="btn btn-primary" (click)="addTreatment()">+
-            Add Another Treatment</button>
-       
-    </div>
+    <!-- Question 1b -->
+    <h5 class="mt-4">Q1b Tell us about tablets or other medication you are
+      taking or will be taking and the dosage.</h5>
+    <p>If you have side effects from taking your medication, please tell us
+      what they are.</p>
+
+    <!-- Table for Medications -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Medication</th>
+          <th>Dosage</th>
+          <th>How often do you take it?</th>
+          <th>Do you have any side effects?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medicine of formData.medications; let i = index">
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="medicine.medicine">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'medications', i, 'medicine')"></app-voice-recorder>
+          </td>
+          <td>
+            <input type="text" class="form-control" [(ngModel)]="medicine.dose">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'medications', i, 'dose')"></app-voice-recorder>
+          </td>
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="medicine.frequency">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'medications', i, 'frequency')"></app-voice-recorder>
+          </td>
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="medicine.sideEffects">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'medications', i, 'sideEffects')"></app-voice-recorder>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary"
+      (click)="addMedication()">+ Add Another Medication</button>
+
+    <!-- Question 1c -->
+    <h5 class="mt-4">Q1c Tell us about any treatments you have had, you are
+      currently having or have planned for the future.</h5>
+
+    <!-- Table for Treatments -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name of treatment, therapy, or operation</th>
+          <th>When did it start/When will it happen?</th>
+          <th>How often do you have it?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let treatment of formData.treatments; let i = index">
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="treatment.therapy">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'treatments', i, 'therapy')"></app-voice-recorder>
+          </td>
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="treatment.startDate">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'treatments', i, 'startDate')"></app-voice-recorder>
+          </td>
+          <td>
+            <input type="text" class="form-control"
+              [(ngModel)]="treatment.frequency">
+            <app-voice-recorder
+              (textCaptured)="updateField($event, 'treatments', i, 'frequency')"></app-voice-recorder>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary" (click)="addTreatment()">+
+      Add Another Treatment</button>
+
+  </div>
 </div>

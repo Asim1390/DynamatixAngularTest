@@ -6,8 +6,10 @@
                 form</strong>, but sometimes we may contact the health
             professionals who support you for further information.</p>
             <iframe width="100%" height="315"
-            src="https://www.youtube.com/embed/sample-video" frameborder="0"
-            allowfullscreen></iframe>
+            src="https://www.youtube.com/embed/KvL3BQtcTmU"
+            frameborder="0" allowfullscreen>
+        </iframe>
+        
         <h5>Q2 Please tell us below about any health professionals who treat
             or care for you most regularly and who are best placed to advise
             us on how your health condition or disability affects you.</h5>
@@ -19,31 +21,41 @@
                 information</strong> section where there is room for
             anything else you want to tell us.</p>
 
-            <div *ngFor="let professional of formData.healthProfessionals; let i = index" class="card p-3 mb-3">
-                <label>Name</label>
-                <input type="text" class="form-control" [(ngModel)]="professional.name">
-                <app-voice-recorder (textCaptured)="updateField($event, 'healthProfessionals', i, 'name')"></app-voice-recorder>
-            
-                <label>Address</label>
-                <input type="text" class="form-control" [(ngModel)]="professional.address">
-                <app-voice-recorder (textCaptured)="updateField($event, 'healthProfessionals', i, 'address')"></app-voice-recorder>
-            
-                <label>Profession</label>
-                <input type="text" class="form-control" [(ngModel)]="professional.profession">
-                <app-voice-recorder (textCaptured)="updateField($event, 'healthProfessionals', i, 'profession')"></app-voice-recorder>
-            
-                <label>Last seen date</label>
-                <input type="date" class="form-control" [(ngModel)]="professional.lastSeen">
-                <app-voice-recorder (textCaptured)="updateField($event, 'healthProfessionals', i, 'lastSeen')"></app-voice-recorder>
-            
-                <button type="button" class="btn btn-danger mt-2" (click)="removeHealthProfessional(i)">❌ Remove</button>
-            </div>
-            
+        <div
+            *ngFor="let professional of formData.healthProfessionals; let i = index"
+            class="card p-3 mb-3">
+            <label>Name</label>
+            <input type="text" class="form-control"
+                [(ngModel)]="professional.name">
+            <app-voice-recorder
+                (textCaptured)="updateField($event, 'healthProfessionals', i, 'name')"></app-voice-recorder>
+
+            <label>Address</label>
+            <input type="text" class="form-control"
+                [(ngModel)]="professional.address">
+            <app-voice-recorder
+                (textCaptured)="updateField($event, 'healthProfessionals', i, 'address')"></app-voice-recorder>
+
+            <label>Profession</label>
+            <input type="text" class="form-control"
+                [(ngModel)]="professional.profession">
+            <app-voice-recorder
+                (textCaptured)="updateField($event, 'healthProfessionals', i, 'profession')"></app-voice-recorder>
+
+            <label>Last seen date</label>
+            <input type="date" class="form-control"
+                [(ngModel)]="professional.lastSeen">
+            <app-voice-recorder
+                (textCaptured)="updateField($event, 'healthProfessionals', i, 'lastSeen')"></app-voice-recorder>
+
+            <button type="button" class="btn btn-danger mt-2"
+                (click)="removeHealthProfessional(i)">❌ Remove</button>
+        </div>
 
         <button type="button" class="btn btn-primary"
             (click)="addHealthProfessional()">➕ Add Health Professional</button>
 
         <!-- Big Mic Button for Recording -->
-        
+
     </div>
 </div>
