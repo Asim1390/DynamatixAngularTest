@@ -16,9 +16,9 @@
     <div class="card p-3 mb-4">
         <h5>Q3 Preparing food</h5>
         <iframe width="100%" height="315"
-    src="https://www.youtube.com/embed/hjvmAUbfXdw"
-    frameborder="0" allowfullscreen>
-</iframe>
+            src="https://www.youtube.com/embed/hjvmAUbfXdw"
+            frameborder="0" allowfullscreen>
+        </iframe>
 
         <p>This means making a simple, one-course meal for one. This
             includes:</p>
@@ -42,18 +42,16 @@
             <input type="radio" name="needsHelp" value="no" id="no"
                 (change)="setNeedsHelp('no')"
                 [(ngModel)]="formData.dailyLiving.needsHelp">
-            <label for="no"><strong>No</strong> <span class="text-muted">Now go
-                    to Q4</span></label>
+            <label for="no"><strong>No</strong> </label> <a href="#question4" class="text-primary">Now go to Q4</a>
             <br>
             <input type="radio" name="needsHelp" value="yes" id="yes"
                 (change)="setNeedsHelp('yes')"
                 [(ngModel)]="formData.dailyLiving.needsHelp">
-            <label for="yes"><strong>Yes</strong> <span
-                    class="text-muted">Continue with Q3</span></label>
+            <label for="yes"><strong>Yes</strong></label> <span
+                class="text-primary">Continue with Q3</span>
         </div>
 
         <!-- YouTube Video Frame -->
-   
 
         <!-- ============================
                  Help Text
@@ -78,7 +76,6 @@
             ============================ -->
         <h6>Q3b Tell us about the difficulties you have with preparing food and
             how you manage them.</h6>
-       
 
         <!-- ============================
                  Example Text
@@ -94,12 +91,13 @@
                 perching stool so I can rest my leg while preparing food.’</p>
         </div>
         <textarea class="form-control" rows="6"
-        [(ngModel)]="formData.dailyLiving.difficulties"></textarea>
+            [(ngModel)]="formData.dailyLiving.difficulties"></textarea>
         <!-- ============================
                  Big Mic Button for Recording
             ============================ -->
-            <div class="text-center mt-3">
-                <app-voice-recorder (textCaptured)="formData.dailyLiving.difficulties = $event"></app-voice-recorder>
-            </div>
+        <div class="text-center mt-3">
+            <app-voice-recorder
+                (textCaptured)="formData.dailyLiving.difficulties = $event"></app-voice-recorder>
+        </div>
     </div>
 </div>

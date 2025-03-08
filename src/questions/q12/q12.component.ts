@@ -15,7 +15,18 @@ export class Q12Component {
     managingMoneyDifficulties: '',
     managingMoneyCondition: '',
   };
-
+  setmanagingMoneyDifficulties(value: string){
+    this.formData.managingMoneyDifficulties = value;
+  
+    if (value === 'No') {
+      setTimeout(() => {
+          const question12 = document.getElementById('question13');
+          if (question12) {
+              question12.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+    }
+  }
   setManagingMoneyCondition(value: string) {
     this.formData.managingMoneyCondition = value;
   }

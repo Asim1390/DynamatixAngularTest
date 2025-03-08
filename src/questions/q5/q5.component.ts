@@ -18,5 +18,13 @@ export class Q5Component {
   }
   setManagingCondition(value: string) {
     this.formData.managingCondition = value;
+    if (value === 'no') {
+     
+      const question6 = document.getElementById('question6');
+      if (question6) {
+          question6.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+ 
   }
 }

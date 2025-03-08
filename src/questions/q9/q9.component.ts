@@ -15,6 +15,17 @@ export class Q9Component {
     talkingDifficulties: '',
     talkingCondition: '',
   }
+  setTalkingDifficulties(value: string) {
+    this.formData.talkingDifficulties = value;
+    if (value === 'No') {
+      setTimeout(() => {
+          const question10 = document.getElementById('question10');
+          if (question10) {
+              question10.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+    }
+  }
   setTalkingCondition(value: string) {
     this.formData.talkingCondition = value;
   }

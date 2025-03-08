@@ -20,5 +20,12 @@ export class Q4Component {
   }
   setEatingCondition(value: string) {
     this.formData.eatingCondition = value;
+    if (value === 'no') {
+     
+      const question5 = document.getElementById('question5');
+      if (question5) {
+          question5.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
   }
 }

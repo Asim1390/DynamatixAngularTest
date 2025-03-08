@@ -17,6 +17,16 @@ export class Q7Component {
   
   setToiletCondition(value: string) {
     this.formData.toiletCondition = value;
+    if (value === 'No') {
+      setTimeout(() => {
+          const question8 = document.getElementById('question8');
+          if (question8) {
+              question8.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
   }
-
+  }
+settoiletDifficulties(value: string) {
+  this.formData.toiletDifficulties = value;
+}
 }

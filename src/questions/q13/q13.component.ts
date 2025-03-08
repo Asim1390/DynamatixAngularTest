@@ -18,6 +18,15 @@ export class Q13Component {
 
   setPlanningJourney(value: string) {
     this.formData.planningJourney = value;
+    
+    if (value === 'No') {
+      setTimeout(() => {
+          const question12 = document.getElementById('question14');
+          if (question12) {
+              question12.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+    }
   }
 
   setPlanningDifficulties(value: string) {

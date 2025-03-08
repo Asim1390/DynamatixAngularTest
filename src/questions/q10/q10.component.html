@@ -1,7 +1,7 @@
 
 <div class="container mt-4">
     <div class="card p-4">
-        <h4 class="fw-bold">Q10 Reading</h4>
+        <h4 class="fw-bold" id="question10">Q10 Reading</h4>
         <iframe width="100%" height="315"
     src="https://www.youtube.com/embed/GC4pxkbWuyQ?si=l2QZHipbVEN279Qn"
     frameborder="0" allowfullscreen>
@@ -22,15 +22,14 @@
             read? (Put a cross in one box below)</h6>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="q10a"
-                    id="noEffect" [(ngModel)]="formData.readingCondition" value="No">
-                <label class="form-check-label fw-bold" for="noEffect">No <span
-                        class="fw-normal">Now go to Q11</span></label>
+                (change)=" setReadingDifficulties('No')"  id="noEffect" [(ngModel)]="formData.readingCondition" value="No">
+                <label class="form-check-label fw-bold" for="noEffect">No <a href="#question11" class="text-primary ms-2">Now go to Q11</a></label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="q10a"
                     id="yesEffect" [(ngModel)]="formData.readingCondition" value="Yes">
                 <label class="form-check-label fw-bold" for="yesEffect">Yes <span
-                        class="fw-normal">Continue with Q10</span></label>
+                    class="text-primary ms-2">Continue with Q10</span></label>
             </div>
             
 

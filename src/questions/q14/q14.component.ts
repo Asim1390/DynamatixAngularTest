@@ -16,8 +16,21 @@ export class Q14Component {
     walkingDistance: '',
     movingAround: '',
   };
-
+setwalkingDistance(value:string){
+  this.formData.walkingDistance = value;
+}
+setmovingDifficulties(value:string){
+  this.formData.movingDifficulties = value;
+}
   setMovingAround(value: string) {
     this.formData.movingAround = value;
+    if (value === 'No') {
+      setTimeout(() => {
+          const question12 = document.getElementById('question15');
+          if (question12) {
+              question12.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+    }
   }
 }

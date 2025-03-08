@@ -13,6 +13,20 @@ import { FormsModule } from '@angular/forms';
 export class Q11Component {
   formData = {
     mixingCondition: '',  
+    mixingDifficulties: '',  
+  }
+  setMixingDifficulties(value: string) {
+    this.formData.mixingDifficulties = value;
+  
+    if (value === 'No') {
+      setTimeout(() => {
+          const question12 = document.getElementById('question12');
+          if (question12) {
+              question12.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+    }
+
   }
   setMixingCondition(value: string) {
     this.formData.mixingCondition = value;

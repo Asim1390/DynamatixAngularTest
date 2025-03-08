@@ -14,6 +14,17 @@ export class Q10Component {
     readingDifficulties: '',
     readingCondition: '',
   }
+  setReadingDifficulties(value: string) {
+    this.formData.readingCondition = value;
+    if (value === 'No') {
+      setTimeout(() => {
+          const question10 = document.getElementById('question11');
+          if (question10) {
+              question10.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+    }
+  }
   setReadingCondition(value: string) {
     this.formData.readingCondition = value;
   }

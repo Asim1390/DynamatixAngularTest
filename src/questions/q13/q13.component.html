@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="card p-4">
-        <h2 class="fw-bold">Q13 Planning and following a journey</h2>
+        <h2 class="fw-bold" id="question13">Q13 Planning and following a journey</h2>
         <iframe width="100%" height="315"
         src="https://www.youtube.com/embed/s_2z8p4SYJQ?si=gxrq4HJI7WBpMQKC"
         frameborder="0" allowfullscreen>
@@ -22,13 +22,13 @@
         <p>(Put a cross in one box below)</p>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="q13a" id="q13aNo"
-                [(ngModel)]="formData.planningJourney" value="No">
-            <label class="form-check-label fw-bold" for="q13aNo">No - Now go to Q14</label>
+            (change)=" setPlanningJourney('No')"  [(ngModel)]="formData.planningJourney" value="No">
+            <label class="form-check-label fw-bold" for="q13aNo">No <a href="#question14" class="text-primary ms-2">Now go to Q14</a></label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="q13a"
                 id="q13aYes" [(ngModel)]="formData.planningJourney" value="Yes">
-            <label class="form-check-label fw-bold" for="q13aYes">Yes - Continue with Q13</label>
+            <label class="form-check-label fw-bold" for="q13aYes">Yes - <span class="text-primary ms-2">Continue with Q13</span></label>
         </div>
 
         <!-- Question 13b -->

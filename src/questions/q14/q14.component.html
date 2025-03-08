@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="card p-4">
-        <h4 class="fw-bold">Q14 Moving around</h4>
+        <h4 class="fw-bold" id="question14">Q14 Moving around</h4>
         <iframe width="100%" height="315"
         src="https://www.youtube.com/embed/3SzazN2OrsQ?si=Gq8YQBjRfJ9YvXCe"
         frameborder="0" allowfullscreen>
@@ -13,13 +13,13 @@
         <h6 class="fw-bold">Q14a Does your condition affect you moving around? (Put a cross in one box below)</h6>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="movingAround"
-                id="q14aNo" [(ngModel)]="formData.movingAround" value="No">
+            (change)="setMovingAround('No')"  id="q14aNo" [(ngModel)]="formData.movingAround" value="No">
             <label class="form-check-label fw-bold" for="q14aNo">No <span class="text-primary">Now go to Q15</span></label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="movingAround"
                 id="q14aYes" [(ngModel)]="formData.movingAround" value="Yes">
-            <label class="form-check-label fw-bold" for="q14aYes">Yes <span class="text-primary">Continue with Q14</span></label>
+            <label class="form-check-label fw-bold" for="q14aYes">Yes <a href="#question15" class="text-primary ms-2">Now go to Q15</a></label>
         </div>
 
         <!-- Question 14b -->

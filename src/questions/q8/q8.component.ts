@@ -14,6 +14,17 @@ export class Q8Component {
     dressingDifficulties: '',
     dressingCondition: '',
   }
+  setdressingDifficulties(value: string) {
+    this.formData.dressingDifficulties = value;
+    if (value === 'No') {
+      setTimeout(() => {
+          const question9 = document.getElementById('question9');
+          if (question9) {
+              question9.scrollIntoView({ behavior: 'smooth' });
+          }
+      }, 100);
+  }
+  }
   setDressingCondition(value: string) {
     this.formData.dressingCondition = value;
   }

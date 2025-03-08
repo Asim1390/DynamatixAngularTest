@@ -1,11 +1,10 @@
-
 <div class="container mt-4">
     <div class="card p-4">
-        <h4 class="fw-bold">Q6 Washing and Bathing</h4>
+        <h4 class="fw-bold" id="question6">Q6 Washing and Bathing</h4>
         <iframe width="100%" height="315"
-    src="https://www.youtube.com/embed/HRfFdgch968?si=AHZIpoguk8s0kB9z"
-    frameborder="0" allowfullscreen>
-</iframe>
+            src="https://www.youtube.com/embed/HRfFdgch968?si=AHZIpoguk8s0kB9z"
+            frameborder="0" allowfullscreen>
+        </iframe>
 
         <p>This means:</p>
         <ul>
@@ -21,45 +20,36 @@
         <h6 class="fw-bold">Q6a Does your condition affect you washing and bathing?</h6>
         <p>(Put a cross in one box below)</p>
         
-        <div class="form-check">
+        <div class="form-check d-flex align-items-center gap-2">
             <input class="form-check-input" type="radio" name="q6a" id="q6a_no"
-                [(ngModel)]="formData.washingCondition" value="No">
-            <label class="form-check-label fw-bold" for="q6a_no">No 
-                <span class="text-primary">Now go to Q7</span>
+                (change)="setBathingCondition('No')" [(ngModel)]="formData.bathingCondition" value="No">
+            <label class="form-check-label fw-bold" for="q6a_no">
+                No <a href="#question7" class="text-primary ms-2">Now go to Q7</a>
             </label>
         </div>
         
         <div class="form-check">
             <input class="form-check-input" type="radio" name="q6a" id="q6a_yes"
-                [(ngModel)]="formData.washingCondition" value="Yes">
+                (change)="setBathingCondition('Yes')" [(ngModel)]="formData.bathingCondition" value="Yes">
             <label class="form-check-label fw-bold" for="q6a_yes">Yes 
                 <span class="text-primary">Continue with Q6</span>
             </label>
         </div>
         
-
         <!-- Question 6b -->
-        <h6 class="fw-bold mt-4">Q6b Tell us about the difficulties you have
-            with washing and bathing and how you manage them.</h6>
+        <h6 class="fw-bold mt-4">Q6b Tell us about the difficulties you have with washing and bathing and how you manage them.</h6>
         <p>For each difficulty, please tell us:</p>
         <ul>
-            <li>How often you have this difficulty – tell us about both good and
-                bad days</li>
+            <li>How often you have this difficulty – tell us about both good and bad days</li>
             <li>What the difficulty is</li>
             <li>Why you have it, or how it relates to your condition</li>
-            <li>Any aids or adaptations you use, or help you get from another
-                person</li>
+            <li>Any aids or adaptations you use, or help you get from another person</li>
             <li>Any help you feel you need but do not get</li>
         </ul>
 
         <h6 class="fw-bold">Examples</h6>
-        <p>‘For about 3 months of the year, I cannot motivate myself to bathe
-            because I feel too depressed. My parents prompt me for several
-            minutes every day to go and shower when I cannot motivate
-            myself.’</p>
-        <p>‘About 5 days a week, I have difficulty washing my lower body because
-            my back is too stiff and painful. I use a shower seat so that I can
-            rest my back when I shower.’</p>
+        <p>‘For about 3 months of the year, I cannot motivate myself to bathe because I feel too depressed. My parents prompt me for several minutes every day to go and shower when I cannot motivate myself.’</p>
+        <p>‘About 5 days a week, I have difficulty washing my lower body because my back is too stiff and painful. I use a shower seat so that I can rest my back when I shower.’</p>
 
         <!-- Difficulty Description -->
         <textarea class="form-control mt-3" rows="5" [(ngModel)]="formData.washingCondition"

@@ -1,43 +1,53 @@
 <div class="container mt-4">
     <div class="card p-4">
-        <h4><strong>Q12 Managing money</strong></h4>
+        <h4 id="question12"><strong>Q12 Managing money</strong></h4>
         <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/CRHnlyJI0dg?si=1iJC_pWzYID1AN8e"
-        frameborder="0" allowfullscreen>
-    </iframe>
-    
+            src="https://www.youtube.com/embed/CRHnlyJI0dg?si=1iJC_pWzYID1AN8e"
+            frameborder="0" allowfullscreen>
+        </iframe>
+
         <p>This means:</p>
         <ul>
             <li>Understanding how much things cost</li>
             <li>Understanding how much change you should get</li>
-            <li>Managing your own budgets, paying your own bills, and planning your own future purchases</li>
+            <li>Managing your own budgets, paying your own bills, and planning
+                your own future purchases</li>
         </ul>
-        <p>This does not mean taking a bill to the post box or being able to hold your change.</p>
-        <p>This also does not mean being able to read a bill or physically open a letter.</p>
+        <p>This does not mean taking a bill to the post box or being able to
+            hold your change.</p>
+        <p>This also does not mean being able to read a bill or physically open
+            a letter.</p>
 
-        <h6><strong>Q12a Does your condition affect you managing your money?</strong></h6>
+        <h6><strong>Q12a Does your condition affect you managing your
+                money?</strong></h6>
 
         <div class="form-check">
             <input class="form-check-input" type="radio"
-                name="managingMoneyCondition" id="q12aNo" value="No"
-                [(ngModel)]="formData.managingMoneyCondition"
-                (change)="setManagingMoneyCondition('No')">
-            <label class="form-check-label" for="q12aNo">No <strong>Now go to Q13</strong></label>
+                name="managingMoneyDifficulties" id="q12aNo" value="No"
+                [(ngModel)]="formData.managingMoneyDifficulties"
+                (change)="setmanagingMoneyDifficulties('No')">
+            <label class="form-check-label" for="q12aNo">No <a
+                    href="#question13" class="text-primary ms-2">Now go to
+                    Q13</a></label>
         </div>
 
         <div class="form-check">
             <input class="form-check-input" type="radio"
-                name="managingMoneyCondition" id="q12aYes" value="Yes"
-                [(ngModel)]="formData.managingMoneyCondition"
-                (change)="setManagingMoneyCondition('Yes')">
-            <label class="form-check-label" for="q12aYes">Yes <strong>Continue with Q12</strong></label>
+                name="managingMoneyDifficulties" id="q12aYes" value="Yes"
+                [(ngModel)]="formData.managingMoneyDifficulties"
+                (change)="setmanagingMoneyDifficulties('Yes')">
+            <label class="form-check-label" for="q12aYes">Yes <strong class="text-primary ms-2">Continue
+                    with Q12</strong></label>
         </div>
 
         <div>
-            <h6 class="mt-3"><strong>Q12b Tell us about the difficulties you have with managing your money and how you manage them.</strong></h6>
+            <h6 class="mt-3"><strong>Q12b Tell us about the difficulties you
+                    have with managing your money and how you manage
+                    them.</strong></h6>
             <p>For each difficulty, please tell us:</p>
             <ul>
-                <li>How often you have this difficulty – tell us about both good and bad days</li>
+                <li>How often you have this difficulty – tell us about both good
+                    and bad days</li>
                 <li>What the difficulty is</li>
                 <li>Why you have it, or how it relates to your condition</li>
                 <li>Any help you get from another person</li>
@@ -45,15 +55,20 @@
             </ul>
 
             <h6><strong>Examples</strong></h6>
-            <p>‘Most days I have difficulty making decisions about bills and household budgets because I become very anxious and panicked. My partner helps me make financial decisions.’</p>
-            <p>‘I always have difficulty paying for things in shops because I find it difficult to calculate how much things cost. My carer helps me understand how much I need to pay.’</p>
+            <p>‘Most days I have difficulty making decisions about bills and
+                household budgets because I become very anxious and panicked. My
+                partner helps me make financial decisions.’</p>
+            <p>‘I always have difficulty paying for things in shops because I
+                find it difficult to calculate how much things cost. My carer
+                helps me understand how much I need to pay.’</p>
 
             <textarea class="form-control mt-3" rows="5"
-                [(ngModel)]="formData.managingMoneyDifficulties"
+                [(ngModel)]="formData.managingMoneyCondition"
                 placeholder="Describe your difficulties..."></textarea>
-                <div class="text-center mt-3">
-                    <app-voice-recorder (textCaptured)="formData.managingMoneyDifficulties = $event"></app-voice-recorder>
-                </div>
+            <div class="text-center mt-3">
+                <app-voice-recorder
+                    (textCaptured)="formData.managingMoneyCondition = $event"></app-voice-recorder>
+            </div>
         </div>
     </div>
 </div>

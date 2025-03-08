@@ -18,5 +18,13 @@ export class Q3Component {
   }
   setNeedsHelp(value: string) {
     this.formData.dailyLiving.needsHelp = value;
+    if (value === 'no') {
+     
+      const question4 = document.getElementById('question4');
+      if (question4) {
+          question4.scrollIntoView({ behavior: 'smooth' });
+      }
   }
+  }
+  
 }
